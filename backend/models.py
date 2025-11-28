@@ -30,7 +30,6 @@ class Company(Base):
     id = Column(Integer, primary_key=True, index=True)
     name = Column(String, unique=True, index=True)
     identifier = Column(String, unique=True, index=True)  # Identificador único para llamadas públicas
-    description = Column(Text, nullable=True)
     business_logic = Column(Text, nullable=True)  # Lógica de negocio, personalidad, catálogo, ofertas
     created_at = Column(DateTime, default=datetime.utcnow)
     

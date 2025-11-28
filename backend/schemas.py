@@ -38,14 +38,12 @@ class CompanyUserCreate(BaseModel):
 class CompanyCreate(BaseModel):
     name: str
     identifier: str  # Identificador único para llamadas públicas (ej: "mi-empresa-123")
-    description: Optional[str] = None
     business_logic: Optional[str] = None  # Lógica de negocio, personalidad, catálogo, ofertas
 
 class CompanyResponse(BaseModel):
     id: int
     name: str
     identifier: str
-    description: Optional[str]
     business_logic: Optional[str]
     created_at: datetime
     
@@ -54,7 +52,6 @@ class CompanyResponse(BaseModel):
 
 class CompanyUpdate(BaseModel):
     name: Optional[str] = None
-    description: Optional[str] = None
     business_logic: Optional[str] = None
 
 # Document Schemas

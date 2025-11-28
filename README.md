@@ -324,6 +324,26 @@ Los archivos estáticos estarán en `frontend/dist/`
 - Verifica que el archivo `.env` existe en `backend/`
 - Asegúrate de que `GROQ_API_KEY` está configurada correctamente
 
+### Error: "Error code: 401 - Invalid API Key" o "invalid_api_key"
+Este error indica que tu API Key de Groq es inválida, ha expirado, o no tiene los permisos necesarios.
+
+**Solución:**
+1. Ve a [console.groq.com/keys](https://console.groq.com/keys) y verifica tu API Key
+2. Si no tienes una, crea una nueva API Key
+3. Abre el archivo `backend/.env` y actualiza la línea:
+   ```env
+   GROQ_API_KEY=tu_nueva_api_key_aqui
+   ```
+4. **Importante**: Asegúrate de que no haya espacios antes o después de la clave
+5. Guarda el archivo `.env`
+6. **Reinicia el servidor backend** completamente (detén y vuelve a iniciar)
+7. Verifica que la API Key tenga acceso a los modelos necesarios:
+   - `whisper-large-v3` (Speech-to-Text)
+   - `openai/gpt-oss-120b` (Text-to-Text)
+   - `playai-tts` (Text-to-Speech)
+
+**Nota**: Si acabas de crear o actualizar la API Key, siempre reinicia el servidor backend para que los cambios surtan efecto.
+
 ### Error: "El modelo playai-tts requiere aceptar términos"
 - Ve a [console.groq.com/playground?model=playai-tts](https://console.groq.com/playground?model=playai-tts)
 - Acepta los términos de uso del modelo

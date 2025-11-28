@@ -1,0 +1,88 @@
+/* ============================================ */
+/* ESTILOS ESPECÍFICOS PARA INDEX.HTML         */
+/* ============================================ */
+
+/* Importar estilos base */
+@import url('styles.css');
+
+/* -------------------------------------- */
+/* SECCIÓN INICIO PERSONALIZADO */
+/* -------------------------------------- */
+
+section.active {
+    background: linear-gradient(135deg, #000000 0%, #04093A 50%, #1a4d5e 100%);
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.welcome-section {
+    text-align: center;
+    padding: 5rem 2rem;
+}
+
+.welcome-section h1 {
+    color: #F0F2FF;
+    font-size: 3rem;
+    margin-bottom: 1rem;
+    text-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+    font-weight: 700;
+    letter-spacing: 1px;
+}
+
+.welcome-section p {
+    font-size: 1.3rem;
+    color: #F0F2FF;
+    max-width: 700px;
+    margin: 0 auto 2rem;
+    line-height: 1.8;
+    opacity: 0.95;
+}
+
+/* Logo destacado en inicio */
+.logo-showcase {
+    margin-top: 3rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 2rem;
+}
+
+.showcase-logo {
+    width: 200px;
+    height: 200px;
+    object-fit: contain;
+    filter: drop-shadow(0 8px 20px rgba(240, 242, 255, 0.2));
+    animation: float 3s ease-in-out infinite;
+    transition: transform 0.3s ease;
+}
+
+.showcase-logo:hover {
+    transform: scale(1.05);
+}
+
+@keyframes float {
+    0%, 100% {
+        transform: translateY(0px);
+    }
+    50% {
+        transform: translateY(-15px);
+    }
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .welcome-section h1 {
+        font-size: 2rem;
+    }
+
+    .welcome-section p {
+        font-size: 1.1rem;
+    }
+
+    .showcase-logo {
+        width: 150px;
+        height: 150px;
+    }
+}

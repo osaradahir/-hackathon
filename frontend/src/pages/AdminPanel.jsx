@@ -1,10 +1,12 @@
 import React, { useState, useEffect } from 'react'
+import { useNavigate } from 'react-router-dom'
 import { useAuth } from '../context/AuthContext'
 import { api } from '../api/api'
 import './AdminPanel.css'
 
 function AdminPanel() {
-  const { user } = useAuth()
+  const { user, logout } = useAuth()
+  const navigate = useNavigate()
   const [companies, setCompanies] = useState([])
   const [users, setUsers] = useState({})
   const [loading, setLoading] = useState(true)
@@ -90,18 +92,68 @@ function AdminPanel() {
     }
   }
 
+  const getInitials = (name) => {
+    if (!name) return 'A'
+    return name
+      .split(' ')
+      .map(n => n[0])
+      .join('')
+      .toUpperCase()
+      .slice(0, 2)
+  }
+
+  const handleLogout = () => {
+    logout()
+    navigate('/login')
+  }
+
   if (user?.role !== 'super_admin') {
     return <div className="unauthorized">No autorizado</div>
   }
 
   return (
     <div className="admin-panel-container">
-      <div className="admin-header">
-        <h1>Panel de Administración</h1>
-        <button className="add-company-btn" onClick={() => setShowForm(!showForm)}>
-          {showForm ? 'Cancelar' : '+ Nueva Empresa'}
-        </button>
+      {/* Panel Izquierdo */}
+      <div className="left-panel">
+        <div className="logo-section">
+          <div className="logo">
+            <div className="logo-icon">I</div>
+            <div className="logo-text">ISPEAK</div>
+          </div>
+          <div className="welcome-text">Administración</div>
+        </div>
+
+        <div className="call-center-card">
+          <div className="user-info">
+            <div className="profile-icon">{getInitials(user?.name)}</div>
+            <div className="user-details">
+              <div className="user-name">{user?.name || 'Administrador'}</div>
+              <div className="user-role">Super Administrador</div>
+            </div>
+          </div>
+
+          <div className="navigation">
+            <a href="#" className="nav-link active" onClick={(e) => { e.preventDefault(); }}>
+              <span className="nav-icon">🏢</span>
+              <span>Empresas</span>
+            </a>
+          </div>
+
+          <button className="logout-btn" onClick={handleLogout}>
+            <span className="logout-icon">🚪</span>
+            <span>Cerrar Sesión</span>
+          </button>
+        </div>
       </div>
+
+      {/* Panel Derecho */}
+      <div className="right-panel">
+        <div className="admin-header">
+          <h1>Panel de Administración</h1>
+          <button className="add-company-btn" onClick={() => setShowForm(!showForm)}>
+            {showForm ? 'Cancelar' : '+ Nueva Empresa'}
+          </button>
+        </div>
 
       {showForm && (
         <div className="company-form">
@@ -246,6 +298,7 @@ function AdminPanel() {
           ))}
         </div>
       )}
+      </div>
     </div>
   )
 }

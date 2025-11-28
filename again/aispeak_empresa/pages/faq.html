@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Preguntas Frecuentes - Aispe-k</title>
+    <link rel="stylesheet" href="../css/styles.css">
+    <link rel="stylesheet" href="../css/faq.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.0/font/bootstrap-icons.css">
+    <style>
+        /* Fix para eliminar línea blanca antes del footer */
+        body {
+            margin: 0;
+            padding: 0;
+        }
+        
+        section {
+            margin-bottom: 0;
+        }
+        
+        footer {
+            margin-top: 0;
+        }
+        
+        .container {
+            margin-bottom: 0;
+            padding-bottom: 0;
+        }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <div class="nav-container">
+            <img src="../img/logo.png" alt="Logo Aispe-k" class="Logo">
+            <div class="logo-space">AISPE-K</div>
+            <ul class="nav-links">
+                <li><a href="../index.html">Inicio</a></li>
+                <li><a href="conocenos.html">Conócenos</a></li>
+                <li><a href="productos.html">Productos</a></li>
+                <li><a href="contactos.html">Contactos</a></li>
+                <li><a href="faq.html">Preguntas Frecuentes</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- PANEL SIN SIDEBAR -->
+    <section>
+        <div class="container">
+            <h2>Preguntas Frecuentes</h2>
+
+            <div class="faq-container">
+
+            <div class="faq-item" onclick="toggleFaq(this)">
+                <div class="faq-question">¿Qué tipos de software desarrollan?<span>+</span></div>
+                <div class="faq-answer">
+                    <p>Desarrollamos soluciones personalizadas incluyendo apps web, móviles, sistemas ERP/CRM e integraciones con IA.</p>
+                </div>
+            </div>
+
+            <div class="faq-item" onclick="toggleFaq(this)">
+                <div class="faq-question">¿Ofrecen soporte técnico?<span>+</span></div>
+                <div class="faq-answer">
+                    <p>Disponemos de soporte técnico 24/7, mantenimiento, seguridad y actualizaciones continuas.</p>
+                </div>
+            </div>
+
+            <div class="faq-item" onclick="toggleFaq(this)">
+                <div class="faq-question">¿Puedo cambiar mi plan?<span>+</span></div>
+                <div class="faq-answer">
+                    <p>Sí, puedes actualizar o bajar tu plan en cualquier momento. Te ayudamos en el proceso.</p>
+                </div>
+            </div>
+
+            <div class="faq-item" onclick="toggleFaq(this)">
+                <div class="faq-question">¿Hay periodo de prueba?<span>+</span></div>
+                <div class="faq-answer">
+                    <p>Contamos con un plan gratuito de 30 días para que pruebes todas las funciones básicas.</p>
+                </div>
+            </div>
+
+            <div class="faq-item" onclick="toggleFaq(this)">
+                <div class="faq-question">¿Cómo inicio una llamada?<span>+</span></div>
+                <div class="faq-answer">
+                    <p>La IA puede iniciar automáticamente cuando entra una llamada o puedes presionar el botón de inicio.</p>
+                </div>
+            </div>
+
+            <div class="faq-item" onclick="toggleFaq(this)">
+                <div class="faq-question">¿Cómo funciona la respuesta automática?<span>+</span></div>
+                <div class="faq-answer">
+                    <p>La IA analiza el audio del cliente y responde con base en su entrenamiento.</p>
+                </div>
+            </div>
+
+            <div class="faq-item" onclick="toggleFaq(this)">
+                <div class="faq-question">¿Cómo verifico el historial de una llamada?<span>+</span></div>
+                <div class="faq-answer">
+                    <p>En el menú principal hay una sección de Registro con transcripción incluida.</p>
+                </div>
+            </div>
+
+
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2025 Aispe-k. Todos los derechos reservados.</p>
+    </footer>
+
+    <script>
+        function toggleFaq(el) {
+            el.classList.toggle("active");
+            el.querySelector("span").textContent = el.classList.contains("active") ? "−" : "+";
+        }
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Productos - Aispe-k</title>
+    <link rel="stylesheet" href="../css/styles.css">
+    <link rel="stylesheet" href="../css/productos.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.0/font/bootstrap-icons.css">
+</head>
+<body>
+
+    <!-- Navegación -->
+    <nav>
+        <div class="nav-container">
+            <img src="../img/logo.png" alt="Logo Aispe-k" class="Logo">
+            <div class="logo-space">AISPE-K</div>
+            <ul class="nav-links">
+                <li><a href="../index.html">Inicio</a></li>
+                <li><a href="conocenos.html">Conócenos</a></li>
+                <li><a href="productos.html">Productos</a></li>
+                <li><a href="contactos.html">Contactos</a></li>
+                <li><a href="faq.html">Preguntas Frecuentes</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Productos -->
+     
+    <section>
+        <div class="container">
+            <h2>Nuestros Productos</h2>
+
+            <div class="product-card" onclick="showPlans()">
+                <h3>Software Empresarial AISPEAK</h3>
+                <p>Nuestra solución integral para la gestión empresarial. Click para ver planes.</p>
+            </div>
+
+            <div class="plans-section" id="plansSection">
+                <button class="back-button" onclick="hidePlans()">← Volver a Productos</button>
+
+                <div class="plans-title-wrapper">
+                    <h3>Elige el plan perfecto para ti</h3>
+                </div>
+
+                <!-- Plan Gratis -->
+                <div class="plan-card">
+                    <h4>Plan Gratis</h4>
+                    <div class="plan-price">$0</div>
+                    <ul class="plan-features">
+                        <li>✓ Acceso básico</li>
+                        <li>✓ 1 usuario</li>
+                        <li>✓ Soporte por email</li>
+                        <li>✓ Actualizaciones básicas</li>
+                    </ul>
+                    <button class="plan-button">Comenzar Gratis</button>
+                </div>
+
+                <!-- Plan Mensual -->
+                <div class="plan-card">
+                    <h4>Plan Mensual</h4>
+                    <div class="plan-price">$49/mes</div>
+                    <ul class="plan-features">
+                        <li>✓ Acceso completo</li>
+                        <li>✓ Hasta 10 usuarios</li>
+                        <li>✓ Soporte prioritario</li>
+                        <li>✓ Todas las funciones</li>
+                        <li>✓ Análisis avanzados</li>
+                    </ul>
+                    <button class="plan-button">Contratar Mensual</button>
+                </div>
+
+                <!-- Plan Anual -->
+                <div class="plan-card">
+                    <h4>Plan Anual</h4>
+                    <div class="plan-price">$490/año</div>
+                    <p style="color:#04093A; margin-bottom:1rem;">¡Ahorra 2 meses!</p>
+                    <ul class="plan-features">
+                        <li>✓ Todo del plan mensual</li>
+                        <li>✓ Usuarios ilimitados</li>
+                        <li>✓ Soporte 24/7</li>
+                        <li>✓ Capacitación incluida</li>
+                        <li>✓ Personalización</li>
+                        <li>✓ API access</li>
+                    </ul>
+                    <button class="plan-button">Contratar Anual</button>
+                </div>
+                
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2025 Aispe-k. Todos los derechos reservados.</p>
+        <p>
+            <a href="#">Términos y Condiciones</a> |
+            <a href="#">Política de Privacidad</a>
+        </p>
+    </footer>
+
+    <script>
+        function showPlans() {
+            document.getElementById("plansSection").classList.add("active");
+            document.querySelector(".product-card").style.display = "none";
+        }
+        function hidePlans() {
+            document.getElementById("plansSection").classList.remove("active");
+            document.querySelector(".product-card").style.display = "block";
+        }
+    </script>
+
+</body>
+</html>

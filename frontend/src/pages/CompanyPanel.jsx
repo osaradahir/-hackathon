@@ -10,7 +10,7 @@ import './CompanyPanel.css'
 function CompanyPanel() {
   console.log('🎬 CompanyPanel - Componente iniciado')
   
-  const { user, loading: authLoading } = useAuth()
+  const { user, loading: authLoading, logout } = useAuth()
   const navigate = useNavigate()
   
   // Debug: Log inicial del componente
@@ -149,14 +149,68 @@ function CompanyPanel() {
     return <div className="unauthorized">No autorizado. Por favor, inicia sesión como administrador de empresa. (Rol actual: {user?.role})</div>
   }
   
+  const getInitials = (name) => {
+    if (!name) return 'U'
+    return name
+      .split(' ')
+      .map(n => n[0])
+      .join('')
+      .toUpperCase()
+      .slice(0, 2)
+  }
+
+  const handleLogout = () => {
+    logout()
+    navigate('/login')
+  }
+
   console.log('✅ CompanyPanel - Usuario autorizado, renderizando panel')
 
   return (
     <div className="company-panel-container">
-      <div className="company-header">
-        <h1>Panel de Empresa</h1>
-        <span className="user-info">{user?.name}</span>
+      {/* Panel Izquierdo */}
+      <div className="left-panel">
+        <div className="logo-section">
+          <div className="logo">
+            <div className="logo-icon">I</div>
+            <div className="logo-text">ISPEAK</div>
+          </div>
+          <div className="welcome-text">Panel de Empresa</div>
+        </div>
+
+        <div className="call-center-card">
+          <div className="user-info">
+            <div className="profile-icon">{getInitials(user?.name)}</div>
+            <div className="user-details">
+              <div className="user-name">{user?.name || 'Usuario'}</div>
+              <div className="user-role">Administrador de Empresa</div>
+            </div>
+          </div>
+
+          <div className="navigation">
+            <a href="#" className="nav-link active" onClick={(e) => { e.preventDefault(); }}>
+              <span className="nav-icon">📞</span>
+              <span>Llamadas</span>
+            </a>
+            <a href="#" className="nav-link" onClick={(e) => { e.preventDefault(); setActiveTab('config'); }}>
+              <span className="nav-icon">⚙️</span>
+              <span>Configuración</span>
+            </a>
+          </div>
+
+          <button className="logout-btn" onClick={handleLogout}>
+            <span>🚪</span>
+            <span>Cerrar Sesión</span>
+          </button>
+        </div>
       </div>
+
+      {/* Panel Derecho */}
+      <div className="right-panel">
+        <div className="company-header">
+          <h1>Panel de Empresa</h1>
+          <span className="user-info-header">{user?.name}</span>
+        </div>
 
       <div className="tabs">
         <button
@@ -251,6 +305,7 @@ function CompanyPanel() {
           )}
         </>
       )}
+      </div>
     </div>
   )
 }

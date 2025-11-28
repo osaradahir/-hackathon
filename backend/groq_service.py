@@ -19,6 +19,12 @@ class GroqService:
         self.groq_key = os.getenv("GROQ_API_KEY")
         if not self.groq_key:
             raise Exception("GROQ_API_KEY no está configurada en el archivo .env")
+        
+        # Limpiar espacios en blanco alrededor de la API key
+        self.groq_key = self.groq_key.strip()
+        
+        if not self.groq_key:
+            raise Exception("GROQ_API_KEY está vacía en el archivo .env. Verifica que tenga un valor válido.")
 
         self.client = Groq(api_key=self.groq_key)
 
@@ -43,7 +49,20 @@ class GroqService:
             return transcription.text
 
         except Exception as e:
-            raise Exception(f"Error en speech to text: {str(e)}")
+            error_str = str(e)
+            
+            # Detectar errores de API key inválida
+            if "401" in error_str or "invalid_api_key" in error_str.lower() or "Invalid API Key" in error_str:
+                raise Exception(
+                    "Error de autenticación: La API Key de Groq es inválida o ha expirado. "
+                    "Por favor:\n"
+                    "1. Verifica tu API Key en https://console.groq.com/keys\n"
+                    "2. Asegúrate de que la clave en el archivo .env esté correcta (sin espacios extra)\n"
+                    "3. Si la clave es nueva, reinicia el servidor backend\n"
+                    "4. Verifica que la clave tenga permisos para usar el modelo whisper-large-v3"
+                )
+            
+            raise Exception(f"Error en speech to text: {error_str}")
 
     # =============================================================
     # TEXT → TEXT (GPT OSS 120B)
