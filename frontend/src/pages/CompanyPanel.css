@@ -1,0 +1,250 @@
+.company-panel-container {
+  min-height: 100vh;
+  background-color: #0a1929;
+  padding: 40px;
+}
+
+.company-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 40px;
+}
+
+.company-header h1 {
+  font-size: 32px;
+  color: #ffffff;
+}
+
+.user-info {
+  color: #90caf9;
+  font-size: 14px;
+}
+
+.tabs {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 30px;
+  border-bottom: 2px solid rgba(255, 255, 255, 0.1);
+}
+
+.tab {
+  background: none;
+  border: none;
+  color: #90caf9;
+  padding: 12px 24px;
+  font-size: 16px;
+  font-weight: 500;
+  cursor: pointer;
+  border-bottom: 2px solid transparent;
+  transition: all 0.3s;
+}
+
+.tab:hover {
+  color: #ffffff;
+}
+
+.tab.active {
+  color: #42a5f5;
+  border-bottom-color: #42a5f5;
+}
+
+.calls-section h2,
+.documents-section h2 {
+  color: #ffffff;
+  font-size: 24px;
+  margin-bottom: 20px;
+}
+
+.calls-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 20px;
+}
+
+.call-card {
+  background-color: #1e3a5f;
+  border-radius: 12px;
+  padding: 20px;
+  cursor: pointer;
+  transition: transform 0.2s, box-shadow 0.2s;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+}
+
+.call-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.3);
+}
+
+.call-card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 15px;
+}
+
+.call-card-header h3 {
+  color: #ffffff;
+  font-size: 20px;
+}
+
+.rating {
+  color: #ffc107;
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.call-card-info {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.call-card-info p {
+  color: #90caf9;
+  font-size: 14px;
+}
+
+.call-card-info strong {
+  color: #ffffff;
+}
+
+.upload-form {
+  background-color: #1e3a5f;
+  border-radius: 12px;
+  padding: 30px;
+  margin-bottom: 30px;
+  display: flex;
+  gap: 20px;
+  align-items: flex-end;
+}
+
+.file-input-wrapper {
+  flex: 1;
+}
+
+.file-input-wrapper input[type="file"] {
+  display: none;
+}
+
+.file-label {
+  display: block;
+  padding: 12px;
+  background-color: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 8px;
+  color: #90caf9;
+  cursor: pointer;
+  text-align: center;
+  transition: all 0.3s;
+}
+
+.file-label:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+  border-color: #42a5f5;
+}
+
+.upload-btn {
+  background-color: #1976d2;
+  color: #ffffff;
+  border: none;
+  padding: 12px 24px;
+  border-radius: 8px;
+  font-size: 16px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  white-space: nowrap;
+}
+
+.upload-btn:hover:not(:disabled) {
+  background-color: #1565c0;
+}
+
+.upload-btn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.documents-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 20px;
+}
+
+.document-card {
+  background-color: #1e3a5f;
+  border-radius: 12px;
+  padding: 20px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+}
+
+.document-card h3 {
+  color: #ffffff;
+  font-size: 18px;
+  margin-bottom: 10px;
+}
+
+.document-card p {
+  color: #90caf9;
+  font-size: 14px;
+}
+
+.no-data {
+  text-align: center;
+  color: #90caf9;
+  padding: 40px;
+  font-size: 16px;
+  font-style: italic;
+}
+
+.loading, .unauthorized {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 60vh;
+  color: #90caf9;
+  font-size: 18px;
+}
+
+.config-section {
+  background-color: #1e3a5f;
+  border-radius: 12px;
+  padding: 30px;
+}
+
+.config-section h2 {
+  color: #ffffff;
+  font-size: 24px;
+  margin-bottom: 10px;
+}
+
+.business-logic-form {
+  margin-top: 20px;
+}
+
+.business-logic-form .form-group {
+  margin-bottom: 20px;
+}
+
+.save-btn {
+  background-color: #66bb6a;
+  color: #ffffff;
+  border: none;
+  padding: 12px 24px;
+  border-radius: 8px;
+  font-size: 16px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.save-btn:hover:not(:disabled) {
+  background-color: #4caf50;
+}
+
+.save-btn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+

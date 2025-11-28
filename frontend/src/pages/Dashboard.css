@@ -1,0 +1,109 @@
+.dashboard-container {
+  min-height: 100vh;
+  background-color: #0a1929;
+  padding: 40px;
+}
+
+.dashboard-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 40px;
+}
+
+.dashboard-header h1 {
+  font-size: 32px;
+  color: #ffffff;
+}
+
+.header-actions {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.user-info {
+  color: #90caf9;
+  font-size: 14px;
+}
+
+.new-call-btn {
+  background-color: #1976d2;
+  color: #ffffff;
+  border: none;
+  padding: 12px 24px;
+  border-radius: 8px;
+  font-size: 16px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.new-call-btn:hover {
+  background-color: #1565c0;
+}
+
+.loading, .no-calls {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-height: 60vh;
+  color: #90caf9;
+  font-size: 18px;
+  gap: 20px;
+}
+
+.calls-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 20px;
+}
+
+.call-card {
+  background-color: #1e3a5f;
+  border-radius: 12px;
+  padding: 20px;
+  cursor: pointer;
+  transition: transform 0.2s, box-shadow 0.2s;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+}
+
+.call-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.3);
+}
+
+.call-card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 15px;
+}
+
+.call-card-header h3 {
+  color: #ffffff;
+  font-size: 20px;
+}
+
+.rating {
+  color: #ffc107;
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.call-card-info {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.call-card-info p {
+  color: #90caf9;
+  font-size: 14px;
+}
+
+.call-card-info strong {
+  color: #ffffff;
+}
+

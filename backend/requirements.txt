@@ -1,0 +1,15 @@
+fastapi
+uvicorn[standard]
+sqlalchemy
+pydantic[email]
+pydantic
+pydantic-settings
+python-jose[cryptography]
+bcrypt>=4.0.0
+python-multipart
+groq
+openai
+aiofiles
+python-dotenv
+twilio>=8.0.0
+
